@@ -36,10 +36,10 @@ class BouncerServiceProvider extends ServiceProvider
         $this->setTablePrefix();
         $this->setUserModel();
 
-        if ($this->runningInConsole()) {
-            $this->publishMiddleware();
-            $this->publishMigrations();
-        }
+//         if ($this->runningInConsole()) {
+//             $this->publishMiddleware();
+//             $this->publishMigrations();
+//         }
     }
 
     /**
@@ -163,7 +163,7 @@ class BouncerServiceProvider extends ServiceProvider
             return $model;
         }
 
-        return $config->get('auth.model', \App\User::class);
+        return $config->get('auth.model', \App\Models\User::class);
     }
 
     /**
